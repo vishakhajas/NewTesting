@@ -1,16 +1,15 @@
-// import logo from './logo.svg';
-import './App.css';
-import Login from './Js-practice/Login';
-import LoginPractice from './Js-practice/Practice';
-import AllPages from './Template/AllPages';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Testing from "./Tester/Testing.tsx";
+
 
 function App() {
-  return (
-    <div className="App">
-      <AllPages/>
-      {/* <LoginPractice/> */}
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Testing />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
