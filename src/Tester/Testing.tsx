@@ -32,21 +32,21 @@ const Testing: React.FC = () => {
 
     const handleMouseEnter = () => {
         if (swiperRef.current?.swiper) {
-            swiperRef.current.swiper.params.autoplay.delay = 1500; // Set autoplay delay
+            swiperRef.current.swiper.params.autoplay.delay = 1500;
             swiperRef.current.swiper.autoplay.start();
         }
     };
 
     const handleMouseLeave = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
+        if (swiperRef.current?.swiper) {
             swiperRef.current.swiper.autoplay.stop();
         }
     };
     const navigate = useNavigate();
 
-const handleNavigation = (category: string) => {
-    navigate(`/${category.toLowerCase()}`);
-};
+    const handleNavigation = (category: string) => {
+        navigate(`/${category.toLowerCase()}`);
+    };
 
     return (
         <div className={styles.container}>
@@ -73,7 +73,8 @@ const handleNavigation = (category: string) => {
                 <Swiper
                     ref={swiperRef}
                     breakpoints={{
-                        600: { slidesPerView: 1 },
+                        0: { slidesPerView: 1.5 },
+                        600: { slidesPerView: 1.5 },
                         768: { slidesPerView: 2 },
                         1024: { slidesPerView: 2.7 }
                     }}
@@ -81,12 +82,12 @@ const handleNavigation = (category: string) => {
                     navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
                     modules={[Navigation, Autoplay, Keyboard]}
                     loop={true}
-                    autoplay={{ delay: 1500, disableOnInteraction: false }}
+                    autoplay={false}
                     speed={1500}
                     keyboard={{ enabled: true, onlyInViewport: true }}
                 >
                     {productData.map((product) => (
-                        <SwiperSlide  key={product.id} className={styles.swiperSlide} onClick={() => handleNavigation(product.name)} >
+                        <SwiperSlide key={product.id} className={styles.swiperSlide} onClick={() => handleNavigation(product.name)} >
                             <div className={styles.productContent}>
                                 <img src={product.image} alt={product.alt} className={styles.blurredImage} />
                                 <div className={styles.clearImageWrapper}>
