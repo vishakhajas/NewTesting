@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Feedblog from "./FeedBlog/Feedblog.tsx";
 import Testing from "./Tester/Testing.tsx";
 
 
@@ -7,6 +8,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Testing />} />
+                {/* <Route path='/' element={<Feedblog />} /> */}
             </Routes>
         </Router>
     );

@@ -35,7 +35,7 @@
 .navigationContainer {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .icon {
@@ -168,7 +168,14 @@
 
 /* Responsive css start  */
 
-@media only screen and (max-width: 600px) {
+
+
+@media only screen and (max-width: 992px) {
+    .topRightContainer {
+        margin-right: 0px;
+    }
+}
+@media only screen and (max-width: 768px) {
     .swiperContainer {
         margin-top: 0px;
     
@@ -191,7 +198,7 @@
     }
 
     .topRightContainer {
-        gap: 15px;
+        gap: 10px;
     }
     .productContent {
         height: 300px;
@@ -201,4 +208,16 @@
         width: 90%;
         height: 90%;
     }
+}@media only screen and (max-width: 480px) {
+    .title {
+        font-size: 16px;
+        text-align: left;
+    }
+    .navigationContainer {
+        gap: 0px;
+    }
+    .productContent {
+        height: 200px;
+    }
+
 }
