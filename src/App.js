@@ -1,14 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Feedblog from "./FeedBlog/Feedblog.tsx";
-// import Testing from "./Tester/Testing.tsx";
-
+import OutdoorSeating from "./OutdoorSeating/OutdoorSeating.tsx";
 
 function App() {
     return (
         <Router>
             <Routes>
-                {/* <Route path="/" element={<Testing />} /> */}
-                <Route path='/' element={<Feedblog />} />
+                <Route path="/" element={<OutdoorSeating />} />
+            
             </Routes>
         </Router>
     );
