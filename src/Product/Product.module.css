@@ -1,0 +1,169 @@
+/* Product.module.css */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.topsection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topsection h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+.navigation-buttons {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.navigationContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #003E52;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    outline: none; 
+    border: none; 
+    background: transparent; 
+}
+
+.icon:hover {
+    opacity: 1;
+}
+.icon:focus {
+    outline: none;
+}
+.icon:focus-visible {
+    outline: none;
+}   
+.swiper {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+}
+
+.productCard {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; 
+}
+.productCard:hover .image {
+    transform: scale(1.1); 
+}
+.productCard::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(16, 75, 93, 0.4), rgba(16, 75, 93, 0.4)); 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 5;
+}
+
+.productCard:hover::after {
+    opacity: 1;
+}
+.overlay {
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, #104b5d);
+    color: white;
+    padding: 15px 30px;
+    text-align: left;
+   
+}
+
+.overlay h4 {
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+    border-top: 1px solid #fff;
+}
+
+.productName {
+    font-size: 18px;
+    margin: 0;
+}
+
+.collection {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.collection::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("./ProductImages/collectionIcon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.collectionIcon {
+    margin-right: 8px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.newBadge {
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    background: white;
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    z-index: 10;
+}
+@media only screen and (max-width: 768px){
+    .topsection h2 {
+        font-size: 24px;
+    }
+    .overlay h4 {
+        font-size: 18px;
+    }
+    
+}
